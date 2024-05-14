@@ -76,6 +76,7 @@ while true; do
 
         echo "[ CERTS ] Exporting Key and Certificate into PFX"
         openssl pkcs12 -inkey $CERTS/ssl-cert.key -in $CERTS/ssl-cert.crt -password pass: -export -out $CERTS/ssl-cert.pfx
+        chmod +r $CERTS/ssl-cert.pfx
 
         echo "[ CERTS ] Exporting Key and Certificate like neilpang/acme.sh"
         mkdir -p $ACME
