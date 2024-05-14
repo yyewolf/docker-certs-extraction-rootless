@@ -1,7 +1,6 @@
-FROM __BASEIMAGE_ARCH__/alpine
+FROM alpine
 MAINTAINER Yewolf <yewolf@yewolf.fr>
 
-__CROSS_COPY qemu-__QEMU_ARCH__-static /usr/bin
 RUN apk --no-cache --update add bash tzdata openssl jq
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
